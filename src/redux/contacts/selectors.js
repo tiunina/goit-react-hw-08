@@ -1,6 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { selectFilter } from "../filter/selectors";
-// import { selectFilter } from "../filter/filtersSlice";
+
 export const selectItems = (state) => state.contacts.items;
 export const selectIsLoading = (state) => state.contacts.loading;
 export const selectError = (state) => state.contacts.error;
