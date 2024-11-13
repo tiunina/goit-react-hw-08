@@ -28,7 +28,7 @@ const ContactsPage = () => {
       {items.length > 0 ? (
         <ContactList />
       ) : (
-        <p>Something went wrong. Please try again!</p>
+        <p>There are no contacts in your phonebook yet!</p>
       )}
     </div>
   );

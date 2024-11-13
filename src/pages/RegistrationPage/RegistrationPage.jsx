@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { RegisterUserSchema } from "../../utils/schemas";
 import { apiRegisterUser } from "../../redux/auth/operations";
 import AppBar from "../../components/AppBar/AppBar";
+import toast from "react-hot-toast";
 
 const INITIAL_VALUES = {
   name: "",
@@ -15,7 +16,16 @@ const RegistrationPage = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(apiRegisterUser(values));
+    dispatch(apiRegisterUser(values))
+      .unwrap()
+      .then(() => {
+        toast.success("Successfull registration!!");
+      })
+      .catch((error) => {
+        if (error === "Request failed with status code 400") {
+          toast.error("User with this email already exists!!");
+        }
+      });
     console.log("values reg", values);
     actions.resetForm();
   };
