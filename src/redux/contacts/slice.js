@@ -4,6 +4,7 @@ import {
   deleteContact,
   fetchContacts,
 } from "../contacts/operations";
+import { apiLogoutUser } from "../auth/operations";
 
 const INITIAL_STATE = {
   items: [],
@@ -53,6 +54,9 @@ export const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(apiLogoutUser.fulfilled, (state) => {
+        state.items = [];
       }),
 });
 
