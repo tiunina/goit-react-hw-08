@@ -3,7 +3,7 @@ import css from "./RegistrationPage.module.css";
 import { useDispatch } from "react-redux";
 import { RegisterUserSchema } from "../../utils/schemas";
 import { apiRegisterUser } from "../../redux/auth/operations";
-import AppBar from "../../components/AppBar/AppBar";
+// import AppBar from "../../components/AppBar/AppBar";
 import toast from "react-hot-toast";
 
 const INITIAL_VALUES = {
@@ -32,7 +32,7 @@ const RegistrationPage = () => {
 
   return (
     <div>
-      <AppBar />
+      {/* <AppBar /> */}
       <Formik
         initialValues={INITIAL_VALUES}
         validationSchema={RegisterUserSchema}

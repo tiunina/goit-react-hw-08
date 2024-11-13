@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contacts/operations";
 import { selectItems } from "../../redux/contacts/selectors";
-import AppBar from "../../components/AppBar/AppBar";
+// import AppBar from "../../components/AppBar/AppBar";
 
 const ContactsPage = () => {
   const items = useSelector(selectItems);
@@ -21,7 +21,7 @@ const ContactsPage = () => {
 
   return (
     <div>
-      <AppBar />
+      {/* <AppBar /> */}
       <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox />
